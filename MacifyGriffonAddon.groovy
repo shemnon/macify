@@ -48,5 +48,13 @@ class MacifyGriffonAddon {
 
 
     //TODO enumerate FactoryBuilderSupporte delegate closures
-
+    def mvcGroups = [
+        // MVC Group for "MacAboutDialog"
+        'MacAboutDialog' : [
+            model : 'MacAboutDialogModel',
+            view : 'MacAboutDialogView',
+            controller : 'MacAboutDialogController'
+        ]
+    
+    ]
 }
