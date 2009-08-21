@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project relativePaths="false" version="4">
+  <component name="ProjectFileVersion" converted="true" />
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/macify.iml" filepath="$PROJECT_DIR$/macify.iml" />
+    </modules>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_5" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="libraryTable">
+    <library name="Griffon 0.2-SNAPSHOT">
+      <CLASSES>
+        <root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/ant-junit.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/ant-launcher.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/ant-nodeps.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/ant-trax.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/ant.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/asm-2.2.3.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/commons-cli-1.0.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/commons-lang-2.1.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/commons-logging-1.1.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/groovy-all-1.6.3.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/jline-0.9.94.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/junit-3.8.2.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/log4j-1.2.15.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/MultipleGradientPaint.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/spring-2.5.6.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/svnkit-1.2.0.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/swing-worker.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/swingx-0.9.3.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/lib/swingxbuilder-0.1.6-SNAPSHOT.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/dist/griffon-cli-0.2-SNAPSHOT.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/dist/griffon-resources-0.2-SNAPSHOT.jar!/" />
+
+<root url="jar:///Users/dannoferrin/devtools/griffon/griffon-dev/dist/griffon-rt-0.2-SNAPSHOT.jar!/" />
+
+
+      </CLASSES>
+    </library>
+  </component>
+</project>
