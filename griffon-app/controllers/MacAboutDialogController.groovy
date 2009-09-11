@@ -1,14 +1,12 @@
+import java.awt.event.WindowEvent
+
 class MacAboutDialogController {
-    // these will be injected by Griffon
-    def model
-    def view
+    // this will be injected by Griffon
+    def mvcName
 
-    void mvcGroupInit(Map args) {
-        // this method is called after model and view are injected
+    public void closeAbout(WindowEvent evt) {
+        println app.groups.keySet()
+        destroyMVCGroup(mvcName)
+        println app.groups.keySet()
     }
-
-    /*
-    def action = { evt = null ->
-    }
-    */
 }
