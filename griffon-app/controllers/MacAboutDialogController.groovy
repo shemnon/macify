@@ -5,8 +5,6 @@ class MacAboutDialogController {
     def mvcName
 
     public void closeAbout(WindowEvent evt) {
-        println app.groups.keySet()
         destroyMVCGroup(mvcName)
-        println app.groups.keySet()
     }
 }
