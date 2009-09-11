@@ -14,6 +14,7 @@ import com.apple.eawt.Application
 import com.apple.eawt.ApplicationAdapter
 import com.apple.eawt.ApplicationEvent
 import griffon.util.GriffonApplicationHelper
+import javax.swing.Action
 
 
 class AboutMenuItemFactory extends AbstractFactory {
@@ -29,9 +30,9 @@ class AboutMenuItemFactory extends AbstractFactory {
             ] as ApplicationAdapter)
             return null
         } else {
-            def mef = builder.getFactories()['menuItem']
-            attributes.value = new AboutDialogAction(app)
-            return mef.newInstance(builder, name, value, attributes)
+            def attrs = new LinkedHashMap(attributes) // make a mutable copy
+            attrs.action = new AboutDialogAction(app)
+            return builder.menuItem(attrs)
         }
 
     }
@@ -43,6 +44,7 @@ class AboutDialogAction extends AbstractAction {
 
     public AboutDialogAction(IGriffonApplication app) {
         this.app = app
+        putValue(Action.NAME, "About ${app.applicationProperties['app.name']}" as String)
     }
 
     void actionPerformed(ActionEvent e) {
