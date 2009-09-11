@@ -42,9 +42,9 @@ class MacifyGriffonAddon {
     //]
 
     // adds new factories to all builders
-    //def factories = [
-    //    factory : /*instance that extends Factory*/
-    //]
+    def factories = [
+        aboutMenuItem : new AboutMenuItemFactory()
+    ]
 
 
     //TODO enumerate FactoryBuilderSupporte delegate closures
