@@ -1,5 +1,5 @@
 class MacifyGriffonPlugin {
-    def version = 0.1
+    def version = "0.1-SNAPSHOT"
     def canBeGlobal = false
     def dependsOn = [:]
 
