@@ -24,7 +24,7 @@ class AboutMenuItemFactory extends AbstractFactory {
         if (isMacOSX) {
             Application.application.addApplicationListener([
                 handleAbout : {ApplicationEvent evt ->
-                    GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog')
+                    GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog', attributes)
                     evt.handled = true
                 }
             ] as ApplicationAdapter)
@@ -41,14 +41,16 @@ class AboutMenuItemFactory extends AbstractFactory {
 class AboutDialogAction extends AbstractAction {
 
     IGriffonApplication app
+    Map attributes
 
-    public AboutDialogAction(IGriffonApplication app) {
+    public AboutDialogAction(IGriffonApplication app, Map attributes) {
         this.app = app
+        this.attributes = attributes
         putValue(Action.NAME, "About ${app.applicationProperties['app.name']}" as String)
     }
 
     void actionPerformed(ActionEvent e) {
-        GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog')
+        GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog', attributes)
     }
 
 }

@@ -1,5 +1,25 @@
-import groovy.beans.Bindable
+import javax.swing.Icon
 
 class MacAboutDialogModel {
-   // @Bindable String propName
+
+    Icon icon
+
+    String appName
+    String version
+    String copyright
+    String copyrightYear
+    String license
+
+    def mvcGroupInit(Map args) {
+        println args
+        println this.properties
+        icon = icon ?: args.builder.imageIcon('/griffon-icon-64x64.png')
+
+        appName = appName ?: args.app.applicationProperties['app.name']
+        version = version ?: "Version ${args.app.applicationProperties['app.version']}"
+        copyrightYear = copyrightYear ?: "2008-${new Date().year + 1900}"
+        copyright = copyright ?: "Copyright \u00a9 $copyrightYear the original author or authors"
+        license = license ?: "All Rights Reserved"
+    }
+
 }
