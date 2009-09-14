@@ -21,17 +21,17 @@ class AboutMenuItemFactory extends AbstractFactory {
 
     Object newInstance(FactoryBuilderSupport builder, Object name, Object value, Map attributes) {
         IGriffonApplication app = builder.app
+        def attrs = new LinkedHashMap(attributes) // make a mutable copy
         if (isMacOSX) {
             Application.application.addApplicationListener([
                 handleAbout : {ApplicationEvent evt ->
-                    GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog', attributes)
+                    GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog', attrs)
                     evt.handled = true
                 }
             ] as ApplicationAdapter)
             return null
         } else {
-            def attrs = new LinkedHashMap(attributes) // make a mutable copy
-            attrs.action = new AboutDialogAction(app)
+            attrs.action = new AboutDialogAction(app, attrs)
             return builder.menuItem(attrs)
         }
 
