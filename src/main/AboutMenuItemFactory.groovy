@@ -22,6 +22,7 @@ class AboutMenuItemFactory extends AbstractFactory {
     Object newInstance(FactoryBuilderSupport builder, Object name, Object value, Map attributes) {
         IGriffonApplication app = builder.app
         def attrs = new LinkedHashMap(attributes) // make a mutable copy
+        attributes.clear() // we consume all attrs because of auto-setting later on
         if (isMacOSX) {
             Application.application.addApplicationListener([
                 handleAbout : {ApplicationEvent evt ->
@@ -29,10 +30,9 @@ class AboutMenuItemFactory extends AbstractFactory {
                     evt.handled = true
                 }
             ] as ApplicationAdapter)
-            return null
+            return new Object()
         } else {
-            attrs.action = new AboutDialogAction(app, attrs)
-            return builder.menuItem(attrs)
+            return builder.menuItem(new AboutDialogAction(app, attrs))
         }
 
     }
@@ -47,6 +47,8 @@ class AboutDialogAction extends AbstractAction {
         this.app = app
         this.attributes = attributes
         putValue(Action.NAME, "About ${app.applicationProperties['app.name']}" as String)
+        attributes.each {k, v -> putValue(k, v)}
+
     }
 
     void actionPerformed(ActionEvent e) {
