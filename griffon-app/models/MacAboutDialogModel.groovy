@@ -11,8 +11,6 @@ class MacAboutDialogModel {
     String license
 
     def mvcGroupInit(Map args) {
-        println args
-        println this.properties
         icon = icon ?: args.builder.imageIcon('/griffon-icon-64x64.png')
 
         appName = appName ?: args.app.applicationProperties['app.name']
