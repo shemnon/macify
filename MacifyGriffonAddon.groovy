@@ -1,11 +1,21 @@
+import org.codehaus.griffon.macify.other.AboutMenuItemFactory
+import org.codehaus.griffon.macify.other.PreferencesMenuItemFactory
+import griffon.util.GriffonPlatformHelper
+import griffon.util.GriffonApplicationUtils
+
 class MacifyGriffonAddon {
 
 
     // lifecycle methods
 
     // called once, after the addon is created
-    //def addonInit(app) {
-    //}
+    def addonInit(app) {
+        if (GriffonApplicationUtils.isMacOSX) {
+            // invoke via reflection so we don't have verifier errors
+            factories.aboutMenuItem = Class.forName('org.codehaus.griffon.macify.mac.MacAboutMenuItemFactory').newInstance()
+            factories.preferencesMenuItem = Class.forName('org.codehaus.griffon.macify.mac.MacPreferencesMenuItemFactory').newInstance()
+        }
+    }
 
     // called once, after all addons have been inited
     //def addonPostInit(app) {
@@ -44,7 +54,7 @@ class MacifyGriffonAddon {
     // adds new factories to all builders
     def factories = [
         aboutMenuItem : new AboutMenuItemFactory(),
-        preferencesMenuItem : new PrefrencesMenuItemFactory()
+        preferencesMenuItem : new PreferencesMenuItemFactory()
     ]
 
 

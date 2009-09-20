@@ -1,3 +1,4 @@
+package org.codehaus.griffon.macify.other
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,18 +24,7 @@ class AboutMenuItemFactory extends AbstractFactory {
         IGriffonApplication app = builder.app
         def attrs = new LinkedHashMap(attributes) // make a mutable copy
         attributes.clear() // we consume all attrs because of auto-setting later on
-        if (isMacOSX) {
-            Application.application.addApplicationListener([
-                handleAbout : {ApplicationEvent evt ->
-                    GriffonApplicationHelper.createMVCGroup(app, 'MacAboutDialog', attrs)
-                    evt.handled = true
-                }
-            ] as ApplicationAdapter)
-            return new Object()
-        } else {
-            return builder.menuItem(new AboutDialogAction(app, attrs))
-        }
-
+        return builder.menuItem(new AboutDialogAction(app, attrs))
     }
 }
 
@@ -48,7 +38,6 @@ class AboutDialogAction extends AbstractAction {
         this.attributes = attributes
         putValue(Action.NAME, "About ${app.applicationProperties['app.name']}" as String)
         attributes.each {k, v -> putValue(k, v)}
-
     }
 
     void actionPerformed(ActionEvent e) {
