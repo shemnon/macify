@@ -43,7 +43,8 @@ class MacifyGriffonAddon {
 
     // adds new factories to all builders
     def factories = [
-        aboutMenuItem : new AboutMenuItemFactory()
+        aboutMenuItem : new AboutMenuItemFactory(),
+        preferencesMenuItem : new PrefrencesMenuItemFactory()
     ]
 
 
