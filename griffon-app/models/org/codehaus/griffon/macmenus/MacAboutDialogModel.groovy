@@ -1,3 +1,5 @@
+package org.codehaus.griffon.macmenus
+
 import javax.swing.Icon
 
 class MacAboutDialogModel {

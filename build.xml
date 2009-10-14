@@ -1,4 +1,4 @@
-<project name="macify" default="test">
+<project name="mac-menus" default="test">
 
     <!-- =================================
           target: clean

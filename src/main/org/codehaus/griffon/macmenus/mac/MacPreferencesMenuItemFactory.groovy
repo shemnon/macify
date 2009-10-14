@@ -1,4 +1,4 @@
-package org.codehaus.griffon.macify.mac
+package org.codehaus.griffon.macmenus.mac
 
 import griffon.util.IGriffonApplication;
 import com.apple.eawt.Application;

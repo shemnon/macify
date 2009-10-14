@@ -1,3 +1,5 @@
+package org.codehaus.griffon.macmenus
+
 import java.awt.event.WindowEvent
 
 class MacAboutDialogController {

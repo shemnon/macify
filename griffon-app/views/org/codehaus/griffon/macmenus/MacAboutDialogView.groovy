@@ -1,3 +1,5 @@
+package org.codehaus.griffon.macmenus
+
 import javax.swing.BoxLayout
 import javax.swing.JLabel
 import java.awt.Font

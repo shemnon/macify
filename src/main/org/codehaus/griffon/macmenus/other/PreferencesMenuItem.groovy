@@ -1,4 +1,4 @@
-package org.codehaus.griffon.macify.other
+package org.codehaus.griffon.macmenus.other
 import groovy.util.AbstractFactory;
 import groovy.util.FactoryBuilderSupport;
 

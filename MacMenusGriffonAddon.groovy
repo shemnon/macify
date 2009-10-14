@@ -1,9 +1,9 @@
-import org.codehaus.griffon.macify.other.AboutMenuItemFactory
-import org.codehaus.griffon.macify.other.PreferencesMenuItemFactory
-import griffon.util.GriffonPlatformHelper
+import org.codehaus.griffon.macmenus.other.AboutMenuItemFactory
+import org.codehaus.griffon.macmenus.other.PreferencesMenuItemFactory
+
 import griffon.util.GriffonApplicationUtils
 
-class MacifyGriffonAddon {
+class MacMenusGriffonAddon {
 
 
     // lifecycle methods
@@ -12,8 +12,8 @@ class MacifyGriffonAddon {
     def addonInit(app) {
         if (GriffonApplicationUtils.isMacOSX) {
             // invoke via reflection so we don't have verifier errors
-            factories.aboutMenuItem = Class.forName('org.codehaus.griffon.macify.mac.MacAboutMenuItemFactory').newInstance()
-            factories.preferencesMenuItem = Class.forName('org.codehaus.griffon.macify.mac.MacPreferencesMenuItemFactory').newInstance()
+            factories.aboutMenuItem = Class.forName('org.codehaus.griffon.macmenus.mac.MacAboutMenuItemFactory').newInstance()
+            factories.preferencesMenuItem = Class.forName('org.codehaus.griffon.macmenus.mac.MacPreferencesMenuItemFactory').newInstance()
         }
     }
 
@@ -62,9 +62,9 @@ class MacifyGriffonAddon {
     def mvcGroups = [
         // MVC Group for "MacAboutDialog"
         'MacAboutDialog' : [
-            model : 'MacAboutDialogModel',
-            view : 'MacAboutDialogView',
-            controller : 'MacAboutDialogController'
+            model : 'org.codehaus.griffon.macmenus.MacAboutDialogModel',
+            view : 'org.codehaus.griffon.macmenus.MacAboutDialogView',
+            controller : 'org.codehaus.griffon.macmenus.MacAboutDialogController'
         ]
     
     ]

@@ -9,19 +9,19 @@
 //    ant.mkdir(dir:"${basedir}/griffon-app/jobs")
 //
 
-// check to see if we already have a MacifyGriffonAddon
+// check to see if we already have a macmenusGriffonAddon
 ConfigSlurper configSlurper1 = new ConfigSlurper()
 def slurpedBuilder1 = configSlurper1.parse(new File("$basedir/griffon-app/conf/Builder.groovy").toURL())
 boolean addonIsSet1
 slurpedBuilder1.each() { prefix, v ->
     v.each { builder, views ->
-        addonIsSet1 = addonIsSet1 || 'MacifyGriffonAddon' == builder
+        addonIsSet1 = addonIsSet1 || 'MacMenusGriffonAddon' == builder
     }
 }
 
 if (!addonIsSet1) {
-    println 'Adding MacifyGriffonAddon to Builders.groovy'
+    println 'Adding MacMenusGriffonAddon to Builders.groovy'
     new File("$basedir/griffon-app/conf/Builder.groovy").append('''
-root.'MacifyGriffonAddon'.addon=true
+root.'MacMenusGriffonAddon'.addon=true
 ''')
 }
